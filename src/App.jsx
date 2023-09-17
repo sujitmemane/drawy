@@ -1,17 +1,16 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
+import { Canvas, MenuBar } from "./components";
 
 function App() {
-  const canvasRef = useRef();
-  console.log(canvasRef.current);
   return (
-    <div>
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full border-2 border-black"
-        width="800"
-        height="600"
-      ></canvas>
+    <div className="relative ">
+      <Canvas />
+      <div className="flex flex-col justify-center items-center">
+        <div className="absolute top-0  ">
+          <MenuBar />
+        </div>
+      </div>
     </div>
   );
 }
